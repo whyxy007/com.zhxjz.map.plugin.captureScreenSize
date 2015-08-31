@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+      id="com.zhxjz.map.plugin.captureScreenSize"
+      version="1.0.0">
+    <name>CaptureScreenSize</name>
+    <description>Capture Screen Size</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,Capture Screen Size</keywords>
+
+    <js-module src="www/captureScreenSize.js" name="captureScreenSize">
+        <clobbers target="captureScreenSize" />
+    </js-module>
+    
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="CaptureScreenSizePlugin" >
+                <param name="android-package" value="com.zhxjz.map.plugin.CaptureScreenSize"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/CaptureScreenSize.java" target-dir="src/com/zhxjz/map/plugin" />
+    </platform>
+
+   
+</plugin>
